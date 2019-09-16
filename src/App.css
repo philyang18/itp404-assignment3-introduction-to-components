@@ -1,33 +1,177 @@
-.App {
-  text-align: center;
+#reddit-form {
+ width: 100%;
+ margin-top: 20px;
+}
+#search-bar {
+ border: 1px solid lightgray;
+ width: 50%;
+}
+#search-button {
+ background-color: lightgreen;
+ width: 10%;
+}
+#search-bar, #search-button {
+ display: inline-block;
+ padding: 10px 15px;
+ font-size: 20px;
+}
+#search-bar:hover, #search-bar:focus {
+ border: 1px solid purple;
+}
+body {
+ text-align: center;
+}
+form,button {
+ display: inline-block;
+}
+#results {
+ width: 60%;
+ margin: auto;
+}
+.result-div {
+ border: 1px solid #D3D3D3;
+ margin-top: 10px;
+}
+.sr-score {
+ background-color: #D3D3D3;
+ padding-top: 28px;
+ font-weight: bolder;
+ font-size: 16px;
+ word-wrap: break-word;
+}
+.title-div {
+ padding-top: 5px;
+ padding-bottom: 10px;
+}
+.sr-author,.sr-title,.sr-comments {
+ float: left;
+ text-align: left;
+ padding-left: 0;
+ padding-right: 10px;
+}
+.sr-author,.sr-comments {
+ font-size: 14px;
+ color: grey;
+}
+.sr-title {
+ font-size: 17px;
+ color: black;
+}
+p {
+ margin-bottom: 0;
+}
+.sr-title:hover{
+ text-decoration: none;
+ color: black;
+}
+.sr-subscribers {
+  text-align: left;
+  font-weight: bold;
+  margin: 15px 0 15px 0px;
+}
+#error {
+ margin-top: 100px;
+ margin-bottom: 50px;
+ font-size: 50px;
+ font-weight: bold;
+ color: red;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+@media screen and (min-width: 0px) and (max-width: 1024px) {
+ #search-bar {
+   width: 60%;
+ }
+ #search-button {
+   width: 25%;
+ }
+ #results {
+   width: 95%;
+ }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .sr-score {
+    padding: 5px 0 5px 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+
+.loader {
+ color: lightgreen;
+ font-size: 90px;
+ text-indent: -9999em;
+ overflow: hidden;
+ width: 1em;
+ height: 1em;
+ border-radius: 50%;
+ margin: 72px auto;
+ position: relative;
+ -webkit-transform: translateZ(0);
+ -ms-transform: translateZ(0);
+ transform: translateZ(0);
+ -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+ animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+@-webkit-keyframes load6 {
+ 0% {
+   box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+ }
+ 5%,
+ 95% {
+   box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+ }
+ 10%,
+ 59% {
+   box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+ }
+ 20% {
+   box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+ }
+ 38% {
+   box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+ }
+ 100% {
+   box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+ }
+}
+@keyframes load6 {
+ 0% {
+   box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+ }
+ 5%,
+ 95% {
+   box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+ }
+ 10%,
+ 59% {
+   box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+ }
+ 20% {
+   box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+ }
+ 38% {
+   box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+ }
+ 100% {
+   box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+ }
+}
+@-webkit-keyframes round {
+ 0% {
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg);
+ }
+ 100% {
+   -webkit-transform: rotate(360deg);
+   transform: rotate(360deg);
+ }
+}
+@keyframes round {
+ 0% {
+   -webkit-transform: rotate(0deg);
+   transform: rotate(0deg);
+ }
+ 100% {
+   -webkit-transform: rotate(360deg);
+   transform: rotate(360deg);
+ }
 }
