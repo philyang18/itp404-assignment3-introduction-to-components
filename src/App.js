@@ -27,11 +27,12 @@ class App extends React.Component {
     this.setState({error: false});
     this.setState({loading: true});
     let results = await getResults(this.state.search);
-    if (results == 0) {
+    if (results === 0) {
       this.setState({error: true});
     }
     else {
       this.setState({results, loading: false});
+      console.log(results);
     }
 
   }
@@ -48,7 +49,7 @@ class App extends React.Component {
           <div id="results" className="container">
             {this.state.results.length > 0 ? <p className="sr-subscribers">{this.state.results[0].data.subreddit_subscribers.toLocaleString()} subscribers to "{this.state.search}"</p> : <p/> }
             {this.state.loading ? <Loading /> : this.state.results.map((result) => {
-              return <SubredditPost result={result}/>
+              return <SubredditPost result={result} key={result.data.id}/>
             })}
           </div>
 
